@@ -2,23 +2,22 @@ package main
 
 import (
 	"fmt"
-	"strconv"
-	"strings"
-	"sync"
+	"os"
 )
 
 func main() {
-	var builder strings.Builder
-	var wg sync.WaitGroup
-	for i := 0; i < 100; i++ {
-		wg.Add(1)
-		go func() {
-			builder.WriteString(strconv.Itoa(i)+",")
-			wg.Done()
-		}()
-	}
-	wg.Wait()
-	fmt.Println(builder.String())
+	//var builder strings.Builder
+	//var wg sync.WaitGroup
+	//for i := 0; i < 100; i++ {
+	//	wg.Add(1)
+	//	go func() {
+	//		builder.WriteString(strconv.Itoa(i)+",")
+	//		wg.Done()
+	//	}()
+	//}
+	//wg.Wait()
+	//fmt.Println(builder.String())
+	fmt.Println(os.Getenv("HOSTNAME"))
 }
 
 type User struct {
